@@ -21,3 +21,5 @@ jobs:
         run: dvc repro --force
       - name: Show the metrics
         run: dvc metrics show
+      - name: Fail if the model got worse
+        run: python src/check_f1.py
